@@ -1,6 +1,6 @@
 
 import Connection from './database/db.js'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors';
@@ -18,11 +18,12 @@ app.get('/', (req, res) => {
 app.use(bodyParser.json({extended:true}));
 app.use(cors());
 app.use('/', Routes);
-dotenv.config();
-const uername = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
+// dotenv.config();
+// const uername = process.env.DB_USERNAME;
+// const password = process.env.DB_PASSWORD;
 
-Connection(uername, password);
+// // Connection(uername, password);
+Connection();
 app.listen(port, () => {
   console.log(`Example app listening  ${port}`)
 })

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const Connection=async (username,password)=>{
+const Connection=async ()=>{
 
-    const URL=`mongodb://${username}:${password}@crud-app-shard-00-00.wa7bx.mongodb.net:27017,crud-app-shard-00-01.wa7bx.mongodb.net:27017,crud-app-shard-00-02.wa7bx.mongodb.net:27017/crud-app?ssl=true&replicaSet=atlas-138g5c-shard-0&authSource=admin&retryWrites=true&w=majority`;
+    const URL=`mongodb://user:tfYN6SiOvuoDlUdm@crud-app-shard-00-00.wa7bx.mongodb.net:27017,crud-app-shard-00-01.wa7bx.mongodb.net:27017,crud-app-shard-00-02.wa7bx.mongodb.net:27017/crud-app?ssl=true&replicaSet=atlas-138g5c-shard-0&authSource=admin&retryWrites=true&w=majority`;
    
     try{
         await mongoose.connect(URL,{useUnifiedTopology:true,useNewUrlParser:true});
@@ -13,5 +13,7 @@ const Connection=async (username,password)=>{
 
 
 export default Connection;
+
+
 
 
